@@ -34,7 +34,7 @@ export const showNotification = (title, message, status) => (dispatch, getState)
   dispatch(showNotificationAction(notification));
 
   notificationTimer = setTimeout(() => {
-    dispatch(clearNotificationAction());
+    dispatch(clearNotification);
   }, 3000);
 }
 
