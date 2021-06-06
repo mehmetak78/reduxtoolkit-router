@@ -1,5 +1,5 @@
-import React, {Fragment, useEffect, useRef, useState} from "react";
-import ReactDOM, {createPortal} from "react-dom";
+import React, {Fragment, useEffect, useState} from "react";
+import {createPortal} from "react-dom";
 import classes from './Modal.module.css';
 
 const Backdrop = props => {

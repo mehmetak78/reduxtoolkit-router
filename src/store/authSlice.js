@@ -30,9 +30,6 @@ const {loginAction, logoutAction} = authSlice.actions;
 
 let logoutTimer;
 
-
-
-
 export const login = (username, token, expirationTime = null) => (dispatch, getState) => {
   const payload = {
     token: token,
@@ -47,7 +44,7 @@ export const login = (username, token, expirationTime = null) => (dispatch, getS
 
   logoutTimer = setTimeout(() => {
     dispatch(logout());
-  }, /*remainingTime*/10000);
+  }, remainingTime);
 };
 
 export const logout = () => (dispatch, getState) => {

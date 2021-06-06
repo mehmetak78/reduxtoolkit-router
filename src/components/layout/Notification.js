@@ -1,5 +1,6 @@
 
-import classes from './Notification.module.scss';
+import styles from './Notification.module.scss';
+
 import {useDispatch} from "react-redux";
 import {clearNotification} from "../../store/notificationSlice";
 
@@ -12,18 +13,22 @@ function Notification(props) {
   let statusClasses = '';
 
   if (status === 'success') {
-    statusClasses = classes.success;
+    statusClasses = styles.success;
+  }
+  else if (status === 'warning') {
+    statusClasses = styles.warning;
+  }
+  else if (status === 'error') {
+    statusClasses = styles.error;
   }
 
-  if (status === 'error') {
-    statusClasses = classes.error;
+  else if (status === 'pending') {
+    statusClasses = styles.pending;
   }
 
-  if (status === 'pending') {
-    statusClasses = classes.pending;
-  }
 
-  const activeClasses = `${classes.notification} ${statusClasses}`;
+
+  const activeClasses = `${styles.notification} ${statusClasses}`;
 
   return (
     <div className={activeClasses} onClick={()=>dispatch(clearNotification())}>
